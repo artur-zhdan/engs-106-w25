@@ -1,3 +1,6 @@
+ARTUR ZHDAN
+
+
 # Overview
 In this lab, you will implement a linear regression by hand (**no high-level libraries are allowed** -- we are doing this from first principles!) on real-world homicide data.
 
