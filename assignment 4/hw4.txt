@@ -1,0 +1,34 @@
+SVM Analysis Report Summary
+Introduction
+This report examines SVM implementation and analysis on the MNIST dataset, covering predictive modeling, voting scheme comparisons, hyperparameter optimization, and confusion matrix generation.
+
+1. Binary Classification with Non-Linear Kernels
+We built an SVM from fundamentals using cvxopt.solvers.qp for the quadratic programming solution, implementing both Polynomial and RBF kernels. The RBF kernel excelled with 98% accuracy by effectively modeling complex decision boundaries.
+
+2. Multi-Class Model Implementation
+We compared two approaches:
+
+One-vs-All: Computationally efficient but struggled with boundary overlap
+One-vs-One: Superior classification despite higher computational demands
+3. Voting Scheme Analysis
+Two methods were evaluated:
+
+Max Confidence Voting: Selects highest decision function score
+Majority Voting: Tallies classifier votes for final decision
+Majority Voting delivered more consistent and accurate results with fewer misclassification errors compared to Max Confidence Voting's outlier sensitivity.
+
+4. Hyperparameter Optimization
+We employed grid search with cross-validation to tune:
+
+Regularization parameter C (margin-error tradeoff)
+Kernel-specific parameters (polynomial degree, RBF γ)
+K-fold cross-validation ensured robust evaluation while validation curves visualized hyperparameter impact.
+
+5. Multi-Class Confusion Matrices
+Analysis revealed:
+
+OvO approach reduced misclassifications through precise boundaries
+RBF kernel minimized confusion between similar digits
+Problematic digit pairs (4/9, 3/8) were identified for targeted improvement
+Conclusion
+The RBF kernel with One-vs-One classification and Majority Voting delivered optimal results. Future research could explore alternative kernels and deep learning methods.
